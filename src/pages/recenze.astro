@@ -1,0 +1,4 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';import Breadcrumbs from '@/components/Breadcrumbs.astro';import CTA from '@/components/CTA.astro';import { reviews } from '@/data/site';
+---
+<BaseLayout title="Recenze" description="Recenze klientů na svatební video, maturitní plesy a filmovou produkci Lukáš Vrbický."><section class="section pt-36"><div class="container"><Breadcrumbs items={[{label:'Recenze',href:'/recenze/'}]} /><p class="eyebrow">Reviews</p><h1 class="font-display mt-4 max-w-5xl text-6xl font-semibold leading-[.9] md:text-8xl">Klid v den natáčení. Silná vzpomínka po letech.</h1><div class="mt-14 grid gap-6 md:grid-cols-3">{reviews.map((r)=><blockquote class="card p-8"><p class="text-lg leading-8 text-ink/76">„{r.text}“</p><footer class="mt-8 font-black text-wine">{r.name}</footer></blockquote>)}</div></div></section><CTA title="Přidáte se mezi spokojené klienty?" /></BaseLayout>

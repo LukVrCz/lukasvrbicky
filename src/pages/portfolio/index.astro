@@ -1,0 +1,35 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+import CTA from '@/components/CTA.astro';
+import { getCollection } from 'astro:content';
+const items = (await getCollection('portfolio')).sort((a, b) => b.data.date.localeCompare(a.data.date));
+const categories = ['Wedding', 'Graduation', 'Real Estate', 'Commercial', 'Events', 'Sports'];
+---
+<BaseLayout title="Portfolio" description="Prémiové portfolio svatebních videí, realitních prezentací, maturitních plesů, komerčních videí, eventů a sportovních projektů.">
+  <section class="section pt-36">
+    <div class="container">
+      <Breadcrumbs items={[{ label: 'Portfolio', href: '/portfolio/' }]} />
+      <p class="eyebrow">Portfolio</p>
+      <h1 class="font-display mt-4 max-w-5xl text-6xl font-semibold leading-[.9] md:text-8xl">Velké karty, tichý luxus a práce rozdělená podle typu projektu.</h1>
+      <p class="lead mt-7">Portfolio zachovává původní projekty a přidává přehlednější cestu ke svatbám, realitám, maturitním plesům, komerční tvorbě, eventům a sportu.</p>
+      <div class="my-12 flex flex-wrap gap-3" role="list" aria-label="Filtr portfolia">
+        <button class="btn btn-primary" data-filter="all">Vše</button>
+        {categories.map((category) => <button class="btn btn-secondary" data-filter={category}>{category}</button>)}
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{items.map((project) => <ProjectCard project={project} href={`/portfolio/${project.slug}/`} />)}</div>
+    </div>
+  </section>
+  <CTA title="Chcete podobný projekt?" text="Pošlete termín a typ zakázky. Navrhnu nejvhodnější formát a rozsah natáčení." />
+  <script>
+    document.querySelectorAll('[data-filter]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+        document.querySelectorAll('[data-card]').forEach((card) => card.classList.toggle('hidden', filter !== 'all' && card.getAttribute('data-card') !== filter));
+        document.querySelectorAll('[data-filter]').forEach((item) => item.classList.remove('btn-primary'));
+        button.classList.add('btn-primary');
+      });
+    });
+  </script>
+</BaseLayout>

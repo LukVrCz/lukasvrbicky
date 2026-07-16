@@ -1,0 +1,8 @@
+---
+const { item } = Astro.props;
+const Icon = item.icon;
+---
+<div class="flex items-center gap-4 rounded-2xl bg-paper p-4 shadow-soft">
+  <Icon class="size-5 text-wine" />
+  <span class="font-bold">{item.label}</span>
+</div>

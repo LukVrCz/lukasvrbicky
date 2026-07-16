@@ -7,7 +7,7 @@ import ServiceCard from '@/components/ServiceCard.astro';
 import StepCard from '@/components/StepCard.astro';
 import { services, processSteps, reviews } from '@/data/site';
 import { getCollection } from 'astro:content';
-import { ArrowRight, CheckCircle2 } from 'lucide-astro';
+import { ArrowRight, CheckCircle2 } from '@lucide/astro';
 const projects = (await getCollection('portfolio')).filter((project) => project.data.featured).slice(0, 3);
 ---
 <BaseLayout title="Svatební videa, reality a eventy" description="Prémiová filmová produkce Lukáš Vrbický. Svatební videa, svatební fotografie, maturitní plesy, realitní prezentace, komerční videa a eventy.">

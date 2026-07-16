@@ -1,4 +1,4 @@
-import { Camera, Clapperboard, Home, PartyPopper, Building2, Trophy, Video, Mail, Sparkles, Heart, Send, MapPin, CalendarDays } from 'lucide-astro';
+import { Camera, Clapperboard, Home, PartyPopper, Building2, Trophy, Video, Mail, Sparkles, Heart, Send, MapPin, CalendarDays } from '@lucide/astro';
 
 export const site = {
   name: 'Lukáš Vrbický',

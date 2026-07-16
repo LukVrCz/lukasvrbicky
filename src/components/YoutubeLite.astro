@@ -1,5 +1,5 @@
 ---
-import { Play } from 'lucide-astro';
+import { Play } from '@lucide/astro';
 const { id, title = 'Video ukázka', label = 'Přehrát film' } = Astro.props;
 ---
 <button class="youtube-lite group media-frame aspect-video w-full cursor-pointer text-left shadow-card" data-youtube={id} aria-label={`Přehrát video: ${title}`}>

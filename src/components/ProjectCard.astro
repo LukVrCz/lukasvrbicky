@@ -1,0 +1,17 @@
+---
+import { ArrowUpRight } from 'lucide-astro';
+const { project, href } = Astro.props;
+---
+<a href={href} class="group card reveal block overflow-hidden p-3" data-card={project.data.category}>
+  <div class="media-frame aspect-[4/3]">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(251,247,239,.22),transparent_34%),linear-gradient(135deg,#3b0b11,#651824_50%,#e9dece)] transition duration-700 group-hover:scale-105"></div>
+    <div class="absolute bottom-5 left-5 z-10 rounded-full bg-ivory/92 px-4 py-2 text-xs font-black uppercase tracking-[.2em] text-wine">{project.data.category}</div>
+  </div>
+  <div class="p-5">
+    <div class="flex items-start justify-between gap-5">
+      <h2 class="font-display text-3xl font-semibold leading-none md:text-4xl">{project.data.title}</h2>
+      <ArrowUpRight class="mt-1 size-5 shrink-0 text-wine transition group-hover:translate-x-1 group-hover:-translate-y-1" />
+    </div>
+    <p class="mt-4 text-sm leading-6 text-muted">{project.data.description}</p>
+  </div>
+</a>

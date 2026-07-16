@@ -1,0 +1,1 @@
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('is-active'));b.classList.add('is-active');const f=b.dataset.filter;document.querySelectorAll('[data-category]').forEach(c=>{c.hidden=f!=='all'&&c.dataset.category!==f})}));

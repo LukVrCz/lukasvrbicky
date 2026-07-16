@@ -1,9 +1,0 @@
----
-const { service } = Astro.props;
-const Icon = service.icon;
----
-<a href={service.href} class="card reveal p-7">
-  <Icon class="size-7 text-wine" />
-  <h2 class="font-display mt-10 text-4xl font-semibold leading-none">{service.title}</h2>
-  <p class="mt-5 leading-7 text-muted">{service.text}</p>
-</a>

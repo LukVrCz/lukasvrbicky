@@ -1,0 +1,17 @@
+---
+const { title = 'Máte termín?', text = 'Napište mi datum, místo a typ zakázky. Obvykle odpovídám do 24 hodin.', primary = 'Ověřit termín', href = '/kontakt/' } = Astro.props;
+---
+<section class="section">
+  <div class="container">
+    <div class="reveal overflow-hidden rounded-[2.5rem] bg-wine p-8 text-ivory shadow-card md:p-14">
+      <div class="grid items-end gap-8 lg:grid-cols-[1fr_auto]">
+        <div>
+          <p class="eyebrow text-sand">Final CTA</p>
+          <h2 class="font-display mt-4 max-w-3xl text-5xl font-semibold leading-[.94] md:text-7xl">{title}</h2>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-ivory/72">{text}</p>
+        </div>
+        <a class="btn bg-ivory text-wine hover:-translate-y-1" href={href}>{primary}</a>
+      </div>
+    </div>
+  </div>
+</section>

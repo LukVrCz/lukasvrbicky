@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lukasvrbicky.cz/sitemap-index.xml

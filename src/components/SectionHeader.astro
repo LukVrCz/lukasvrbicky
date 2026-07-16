@@ -1,9 +1,0 @@
----
-const { eyebrow, title, text, align = 'center' } = Astro.props;
-const centered = align === 'center';
----
-<header class:list={['reveal mb-12 md:mb-16', centered ? 'mx-auto max-w-4xl text-center' : 'max-w-4xl']}>
-  {eyebrow && <p class="eyebrow">{eyebrow}</p>}
-  <h2 class="font-display mt-4 text-5xl font-semibold leading-[0.92] md:text-7xl">{title}</h2>
-  {text && <p class:list={['lead mt-6', centered && 'mx-auto']}>{text}</p>}
-</header>
